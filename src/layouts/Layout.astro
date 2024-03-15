@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style>
+  /*COLORES:
+  Fondo azul: #21243d.
+  Naranja: #EB8526. 
+  D.UNA: #FFAF4E.
+  Rojo: #F00.
+  VERDE: #22B455
+
+  FUENTES:
+  Chakra Petch
+  Kanit
+  */
+  .body {
+    width: 100dvw;
+    height: fit-content;
+    background-color: #21243d;
+  }
+</style>

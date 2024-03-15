@@ -1,0 +1,28 @@
+---
+interface Props {
+  titulo: string;
+  color: string;
+  logo: string;
+  imagen: string;
+  descripcion: string;
+  tecnologias: string;
+  url: string;
+}
+const { titulo, descripcion, imagen, tecnologias, logo } = Astro.props;
+---
+
+<article>
+  <div class="left-p-side">
+    <div class="logo">{logo}</div>
+    <div class="icons">{tecnologias}</div>
+  </div>
+  <div class="right-p-side">
+    <div class="cont-text">
+      <h3>{titulo}</h3>
+    </div>
+    <p>{descripcion}</p>
+    <div>
+      <img src={imagen} alt="imagen del proyecto" />
+    </div>
+  </div>
+</article>
