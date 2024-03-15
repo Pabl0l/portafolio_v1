@@ -17,8 +17,8 @@ Soy un apasionado por la tecnología y el desarrollo web. Mi enfoque principal e
 
 ## Habilidades
 
-- Desarrollo Frontend: HTML, CSS, JavaScript, React.js, Vue.js
-- Desarrollo Backend: Node.js, Express.js, MongoDB, SQL
+- Desarrollo Frontend: HTML, CSS, JavaScript, React.js
+- Desarrollo Backend: Node.js, Express.js, SQL
 - Otros: Git, RESTful APIs, Responsive Design
 
 ## Contacto
