@@ -1,54 +1,28 @@
-# Astro Starter Kit: Basics
+# Resumen
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Portafolio de Pablo Olivera
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+¡Hola! Soy Pablo Olivera, un Desarrollador Web Full Stack con experiencia en la gestión y desarrollo de D. UNA Delivery App. Me he especializado en JavaScript, utilizando sus librerías y frameworks para crear herramientas y soluciones efectivas.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Acerca de mí
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Soy un apasionado por la tecnología y el desarrollo web. Mi enfoque principal es crear experiencias digitales de alta calidad que satisfagan las necesidades de los usuarios y superen sus expectativas. Con experiencia tanto en el front-end como en el back-end, estoy preparado para abordar proyectos complejos y ofrecer soluciones innovadoras.
 
-## 🚀 Project Structure
+## Proyectos Destacados
 
-Inside of your Astro project, you'll see the following folders and files:
+### D. UNA Delivery App
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Descripción:** Desarrollé una aplicación de entrega a domicilio desde cero, gestionando tanto el front-end como el back-end.
+- **Tecnologías utilizadas:** JavaScript, Node.js, Express.js, React.js, Google Firebase, Google Maps API.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Habilidades
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Desarrollo Frontend: HTML, CSS, JavaScript, React.js, Vue.js
+- Desarrollo Backend: Node.js, Express.js, MongoDB, SQL
+- Otros: Git, RESTful APIs, Responsive Design
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contacto
 
-## 🧞 Commands
+¡Estoy siempre interesado en nuevos proyectos y oportunidades de colaboración! No dudes en ponerte en contacto conmigo a través de [mi correo electrónico](mailto:j13olivera@gmail.com) o [mi perfil de LinkedIn](https://www.linkedin.com/in/pablo-olivera-451467292/).
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+¡Espero poder trabajar juntos pronto!
