@@ -1,40 +1,149 @@
 ---
-import Proyects from "../components/Proyects.astro";
-const { titulo, color, imagen, descripcion, tecnologias, url, logo } =
-  Astro.props;
+import Proyects from "./Proyects.astro";
 ---
 
-<section>
-  <div class="titulo t-blue">
-    <h2 class="text-titulo tx-blue">Proyectos</h2>
+<section class="sec-proyects">
+  <div class="up-bar">
+    <h2 class="text-titulo tx-blue">P r o y e c t o s</h2>
   </div>
-  <nav class="g-proyects">
-    <Proyects
-      titulo=""
-      color=""
-      imagen=""
-      logo=""
-      descripcion=""
-      tecnologias=""
-      url=""
-    />
-    <Proyects
-      titulo=""
-      color=""
-      imagen=""
-      logo=""
-      descripcion=""
-      tecnologias=""
-      url=""
-    />
-    <Proyects
-      titulo=""
-      color=""
-      imagen=""
-      logo=""
-      descripcion=""
-      tecnologias=""
-      url=""
-    />
-  </nav>
+  <div class="scroll-div" id="scroll-div">
+    <div class="toggleScroll right-pad"></div>
+    <div class="toggleScroll left-pad"></div>
+    <nav class="g-proyects" id="g-proyects">
+      <Proyects
+        titulo=""
+        color=""
+        imagen=""
+        logo=""
+        descripcion=""
+        tecnologias={[]}
+        url=""
+      />
+      <Proyects
+        titulo="D. Una Delivery App"
+        color="#FFAF4E"
+        imagen="/D_Una_Page.png"
+        logo="/d_una_logo.png"
+        descripcion="Aplicativo móvil para realizar todo tipo de pedidos a domicilio. Disponible en Appstore y Playstore."
+        tecnologias={[
+          "html",
+          "js",
+          "css",
+          "firebase",
+          "mercado_pago",
+          "twilio",
+          "maps",
+        ]}
+        url=""
+      />
+      <Proyects
+        titulo=""
+        color=""
+        imagen=""
+        logo=""
+        descripcion=""
+        tecnologias={[]}
+        url=""
+      />
+    </nav>
+  </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector(".scroll-div");
+    let intervalo = 0;
+
+    if (nav !== null) {
+      const scrollIzquierdo = document.querySelector(".left-pad");
+      const scrollDerecho = document.querySelector(".right-pad");
+
+      scrollIzquierdo?.addEventListener("mouseover", () => {
+        intervalo = setInterval(function () {
+          console.log(nav.scrollLeft);
+          if (nav.scrollLeft > 980) {
+            nav.scrollLeft -= 20;
+            (nav.scrollLeft === 980 && clearInterval(intervalo)) ||
+              scrollIzquierdo?.addEventListener("mouseout", () =>
+                clearInterval(intervalo)
+              );
+          } else {
+            nav.scrollLeft -= 20;
+            (nav.scrollLeft === 0 && clearInterval(intervalo)) ||
+              scrollIzquierdo?.addEventListener("mouseout", () =>
+                clearInterval(intervalo)
+              );
+          }
+        }, 1);
+      });
+
+      scrollDerecho?.addEventListener("mouseover", () => {
+        intervalo = setInterval(function () {
+          console.log(nav.scrollLeft);
+          if (nav.scrollLeft < 980) {
+            nav.scrollLeft += 20;
+            (nav.scrollLeft === 980 && clearInterval(intervalo)) ||
+              scrollDerecho?.addEventListener("mouseout", () =>
+                clearInterval(intervalo)
+              );
+          } else {
+            nav.scrollLeft += 20;
+            (nav.scrollLeft === 1980 && clearInterval(intervalo)) ||
+              scrollDerecho?.addEventListener("mouseout", () =>
+                clearInterval(intervalo)
+              );
+          }
+        }, 1);
+      });
+    }
+  });
+</script>
+
+<style>
+  .sec-proyects {
+    height: 100dvh;
+    position: relative;
+  }
+  .up-bar {
+    height: fit-content;
+    justify-content: end;
+    display: flex;
+  }
+  .text-titulo {
+    width: 20dvw;
+    border-radius: 15px 0px 0px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #21243d;
+    box-shadow: 4px 4px 0px #21243d;
+    color: #21243d;
+    font-family: "Chakra Petch", sans-serif;
+    padding: 2dvh 6dvw;
+    height: fit-content;
+    font-size: 2.3dvw;
+    margin: 8px 0px;
+  }
+  .g-proyects {
+    display: flex;
+    width: 240dvw;
+    overflow-x: auto;
+    height: fit-content;
+    margin: 0px 6dvw;
+  }
+  .scroll-div {
+    overflow-x: hidden;
+  }
+  .toggleScroll {
+    position: absolute;
+    height: 80%;
+    top: 16%;
+    width: 9.2dvw;
+    display: flex;
+    z-index: 100;
+  }
+  .left-pad {
+    left: 0%;
+  }
+  .right-pad {
+    right: -0.5%;
+  }
+</style>
