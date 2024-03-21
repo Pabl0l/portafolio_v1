@@ -1,92 +1,271 @@
+---
+const backend = [
+  "node",
+  "express",
+  "multer",
+  "sequelize",
+  "postgres",
+  "dbeaver",
+];
+const otros = ["git", "chatgpt", "bash"];
+const frontend = [
+  "html",
+  "css",
+  "js",
+  "ts",
+  "react",
+  "redux",
+  "astro",
+  "tailwind",
+  "figma",
+  "photoshop",
+];
+---
+
 <section class="sec-sm">
-  <div class="titulo">
-    <h2 class="text-titulo">Sobre mí</h2>
-  </div>
   <article class="sm-detalles">
-    <h3 class="h3-contratame h3-size">Contrátame</h3>
-    <div class="div-sm sm-a">
-      <p>
-        Hola! Soy Pablo Olivera, Desarrollador Web Full Stack con experiencia en
-        la gestión y desarrollo de D. UNA Delivery App, me he especializado en
-        JavaScript, utilizando sus librerías y frameworks para crear
-        herramientas y soluciones efectivas.
-        <br />
-        Durante mi tiempo en D. UNA, perfeccioné habilidades de programación y fortalecí
-        habilidades blandas al colaborar con asociados y clientes. <br />
-        Ahora como freelancer, continúo mejorando mis habilidades técnicas y blandas
-        para proporcionar soluciones sólidas, comprometido con la excelencia y claridad
-        en cada proyecto.
-      </p>
+    <div class="right-pad">
+      <h2 class="text-titulo">S o b r e &nbsp; m í</h2>
+      <div class="div-sm sm-a">
+        <p class="p-st">
+          Hola! Soy Pablo Olivera, Desarrollador Web Full Stack con experiencia
+          en la gestión y desarrollo de D. UNA Delivery App, me he especializado
+          en JavaScript, utilizando sus librerías y frameworks para crear
+          herramientas y soluciones efectivas.
+          <br />
+          Durante mi tiempo en D. UNA, perfeccioné habilidades de programación y
+          fortalecí habilidades blandas al colaborar con asociados y clientes. <br
+          />
+          Ahora como freelancer, continúo mejorando mis habilidades técnicas y blandas
+          para proporcionar soluciones sólidas, comprometido con la excelencia y
+          claridad en cada proyecto.
+        </p>
+      </div>
+    </div>
+    <div class="left-pad">
+      <a class="a-contratame" href="">Contrátame</a>
       <div class="div-sm sm-b">
-        De: Arauca, Colombia. <br /> En: Barranquilla, Colombia. <br /> Modelo: 2002,
-        Oct.
+        <p class="p-st">
+          De: Arauca, Colombia. <br /> En: Barranquilla, Colombia. <br /> Modelo:
+          2002, Oct.
+        </p>
       </div>
       <div class="div-sm sm-c">
-        También disfruto:
-        <br /> ★ Tocar guitarra
-        <br /> ★ Salir con mis perros
-        <br /> ★ Hacer ejercicio
-        <br /> ★ La filmografía
-        <br /> ★ Conversaciones de calidad
+        <p class="p-st">
+          También disfruto:
+          <br />-Tocar guitarra
+          <br />-Salir con mis perros
+          <br />-Hacer ejercicio
+          <br />-La filmografía
+          <br />-Conversaciones de calidad
+        </p>
       </div>
     </div>
   </article>
-  <div class="cont-text contratame"></div>
   <article class="sm-habilidades">
-    <div class="g-habilidades">
-      <div class="rightdown"></div>
-      <div class="cont-text">
-        <h4>Habilidades</h4>
-      </div>
-      <div class="div-sm">
-        <h4>Ingles</h4>
-        <progress> </progress>
-        <h4>Concentración</h4>
-        <progress> </progress>
-        <h4>Adaptabilidad</h4>
-        <progress> </progress>
-        <h4>Trabajo en equipo</h4>
-        <progress> </progress>
-        <h4>Comunicación</h4>
-        <progress> </progress>
+    <div class="lef-pad">
+      <h4 class="hab-title">Habilidades</h4>
+      <div class="mini-div-sm">
+        <label class="lab-sm">Ingles</label>
+        <progress class="prgss-sm" max="100" value="75"></progress>
+        <label class="lab-sm">Concentración</label>
+        <progress class="prgss-sm" max="100" value="95"></progress>
+        <label class="lab-sm">Adaptabilidad</label>
+        <progress class="prgss-sm" max="100" value="90"></progress>
+        <label class="lab-sm">Trabajo en equipo</label>
+        <progress class="prgss-sm" max="100" value="70"></progress>
+        <label class="lab-sm">Comunicación</label>
+        <progress class="prgss-sm" max="100" value="80"></progress>
       </div>
     </div>
-    <div class="g-backend">
-      <div class="rightdown"></div>
-      <div class="cont-text">
-        <h4>Backend</h4>
-      </div>
-      <div class="div-sm">
-        <div class="h-icon"></div>
-      </div>
-    </div>
-    <div class="g-otros">
-      <div class="rightdown"></div>
-      <div class="cont-text">
-        <h4>Otros</h4>
-      </div>
-      <div class="div-sm">
-        <div class="h-icon"></div>
-        <div class="h-icon"></div>
-        <div class="h-icon"></div>
+    <div class="mid-pad">
+      <div class="g-frontend">
+        <h4 class="hab-title">Frontend</h4>
+        <div class="mini-div-sm icon-content">
+          {
+            frontend.map((tec) => (
+              <img class="icon" src={`/public/${tec}.svg`} alt={tec} />
+            ))
+          }
+        </div>
       </div>
     </div>
-    <div class="g-frontend">
-      <div class="rightdown"></div>
-      <div class="cont-text">
-        <h4>Frontend</h4>
+    <div class="rig-pad">
+      <div class="g-backend">
+        <h4 class="hab-title">Backend</h4>
+        <div class="mini-div-sm icon-content">
+          {
+            backend.map((tec) => (
+              <img class="icon" src={`/${tec}.svg`} alt={tec} />
+            ))
+          }
+        </div>
       </div>
-      <div class="div-sm">
-        <div class="h-icon"></div>
-        <div class="h-icon"></div>
-        <div class="h-icon"></div>
+      <div class="g-otros">
+        <h4 class="hab-title">Otros</h4>
+        <div class="mini-div-sm icon-content">
+          {
+            otros.map((tec) => (
+              <img class="icon" src={`/public/${tec}.svg`} alt={tec} />
+            ))
+          }
+        </div>
       </div>
     </div>
+    <p class="original">
+      Diseño original de <a
+        href="https://www.github.com/pabl0l"
+        target="_blank"
+        style="color:inherit;"><strong>Pabl0l</strong></a
+      > *
+    </p>
   </article>
 </section>
 
 <style>
   .sec-sm {
-    min-height: 100dvh;
+    min-height: 44.4dvw;
+    position: relative;
+  }
+  .sm-detalles {
+    display: flex;
+  }
+  .text-titulo {
+    width: 20dvw;
+    border-radius: 0px 15px 15px 0px;
+    background-color: #f5f5f5;
+    border: 1px solid #eb8526;
+    box-shadow: 4px 4px 0px #eb8526;
+    color: #eb8526;
+    height: fit-content;
+    padding: 2dvh 6dvw;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 2.3dvw;
+  }
+  .div-sm {
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #eb8526;
+    box-shadow: 4px 4px 0px #eb8526;
+    color: #eb8526;
+    height: fit-content;
+    padding: 10px 50px;
+    margin: 10px 6dvw;
+  }
+  .mini-div-sm {
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #eb8526;
+    box-shadow: 4px 4px 0px #eb8526;
+    color: #eb8526;
+    height: fit-content;
+    padding: 10px 50px;
+    margin: 10px 1dvw;
+  }
+  .right-pad {
+    display: flex;
+    flex-direction: column;
+    flex: 0.7;
+  }
+  .left-pad {
+    display: flex;
+    flex-direction: column;
+    flex: 0.3;
+  }
+  .p-st {
+    font-size: 1.5dvw;
+    color: #040404;
+  }
+  .sm-a {
+    height: 28dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sm-b {
+    width: 18dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 0px #21243d;
+    border: 1px solid #21243d;
+  }
+  .sm-c {
+    width: 18dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .a-contratame {
+    text-decoration: none;
+    background-color: #f5f5f5;
+    font-size: 1.7dvw;
+    padding: 0.5dvw 4dvw;
+    border-radius: 5px;
+    color: #21243d;
+    margin: 10px 18dvw 0px 6dvw;
+    font-weight: 500;
+    margin: auto;
+  }
+  .hab-title {
+    text-decoration: none;
+    background-color: #f5f5f5;
+    width: fit-content;
+    font-size: 1.7dvw;
+    padding: 0.5dvw 4dvw;
+    border-radius: 5px;
+    color: #eb8526;
+    margin: 10px 18dvw 0px 6dvw;
+    font-weight: 500;
+    margin: auto;
+    box-shadow: 4px 4px #eb8526;
+  }
+  .icon {
+    width: 5dvw;
+    margin: 12px auto;
+  }
+  .sm-habilidades {
+    display: flex;
+    margin: 80px 0px 40px;
+    justify-content: center;
+  }
+  .sm-habilidades > * {
+    flex: 0.3;
+  }
+  .icon-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .prgss-sm {
+    width: 100%;
+    margin: auto;
+    color: #eb8526;
+    border-radius: 10px;
+    border: none;
+  }
+  .prgss-sm::-webkit-progress-value {
+    background-color: #eb8526;
+    border-radius: 10px;
+  }
+  .prgss-sm::-moz-progress-bar {
+    border-radius: 10px;
+    background-color: #eb8526;
+  }
+  .prgss-sm ::-ms-fill {
+    border-radius: 10px;
+    background-color: #eb8526;
+  }
+  .lab-sm {
+    display: block;
+    color: #21243d;
+    font-weight: 400;
+    font-size: 1.4dvw;
+    margin: 12px 0px;
+  }
+  .original {
+    position: absolute;
+    bottom: -3%;
+    right: 6%;
   }
 </style>

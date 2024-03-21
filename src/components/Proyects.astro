@@ -8,31 +8,53 @@ interface Props {
   tecnologias: string[];
   url: string;
 }
-const { titulo, descripcion, imagen, tecnologias, logo } = Astro.props;
+const { titulo, descripcion, imagen, tecnologias, logo, color, url } =
+  Astro.props;
 ---
 
-<article class="art-proy">
+<article
+  class="art-proy"
+  style={`box-shadow: 4px 4px ${color}; border: 1px solid ${color};`}
+>
   <div class="left-p-side">
-    <img class="img-logo" src={logo} alt="imagen del proyecto" />
-    <div class="div-icons">{tecnologias}</div>
+    <div class="div-logo">
+      <img class="img-logo" src={logo} alt="imagen del proyecto" />
+    </div>
+    <div
+      class="div-icons"
+      style={`box-shadow: 4px 4px ${color}; border: 1px solid ${color};`}
+    >
+      {
+        tecnologias.map((tec, index) => (
+          <img class="icon" src={`/public/${tec}.svg`} alt={tec} />
+        ))
+      }
+    </div>
   </div>
   <div class="right-p-side">
-    <h3 class="h3-titulo">{titulo}</h3>
+    <h3
+      class="h3-titulo"
+      style={`box-shadow: 4px 4px ${color}; border: 1px solid ${color}; color: ${color}`}
+    >
+      {titulo}
+    </h3>
     <p class="p-desc">{descripcion}</p>
-    <div class="div-img">
-      <img class="img-imagen" src={imagen} alt="imagen del proyecto" />
-    </div>
+
+    <a href={`https://${url}`} target="_blank">
+      <div
+        class="div-img"
+        style={`box-shadow: 4px 4px ${color}; border: 1px solid ${color};`}
+      >
+        <img class="img-imagen" src={imagen} alt="imagen del proyecto" />
+      </div>
+    </a>
   </div>
 </article>
 
 <style>
-  svg {
-    fill: #040404;
-  }
   .art-proy {
     margin: 16px 48px 16px 0px;
     background-color: #f5f5f5;
-    box-shadow: 4px 4px #21243d;
     border-radius: 16px;
     width: 75dvw;
     height: 80dvh;
@@ -48,8 +70,7 @@ const { titulo, descripcion, imagen, tecnologias, logo } = Astro.props;
     flex-direction: column;
   }
   .left-p-side > * {
-    display: block;
-    margin: 0px auto;
+    margin: 10px auto;
   }
   .img-imagen {
     width: 42dvw;
@@ -60,8 +81,21 @@ const { titulo, descripcion, imagen, tecnologias, logo } = Astro.props;
     width: 41.8dvw;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 4px 4px #ffaf4e;
-    border: 1px solid #eb8526;
+  }
+  .icon {
+    width: 3dvw;
+    margin: 12px auto;
+    fill: #040404;
+  }
+  .div-logo {
+    width: 13dvw;
+    height: 31dvh;
+  }
+  .img-logo {
+    width: 100%;
+    height: inherit;
+    border-radius: 67px;
+    box-shadow: 0px 0px 20px #666;
   }
   .p-desc {
     width: 41.8dvw;
@@ -69,13 +103,15 @@ const { titulo, descripcion, imagen, tecnologias, logo } = Astro.props;
     color: #040404;
     white-space: break-spaces;
     margin-bottom: 2px;
+    font-size: 1.5dvw;
+    color: #040404;
   }
   .div-icons {
     background-color: #fff;
     width: 20dvw;
     height: 36dvh;
     box-shadow: 4px 4px #ffaf4e;
-    border: 1px solid #eb8526;
+    border: 1px solid #ffaf4e;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -85,7 +121,7 @@ const { titulo, descripcion, imagen, tecnologias, logo } = Astro.props;
   .h3-titulo {
     font-family: "Chakra Petch", sans-serif;
     box-shadow: 4px 4px #ffaf4e;
-    border: 1px solid #eb8526;
+    border: 1px solid #ffaf4e;
     color: #ffaf4e;
     background-color: #fff;
     width: 42dvw;
