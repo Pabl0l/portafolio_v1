@@ -8,12 +8,26 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/port_icon.png" />
+    <meta name="author" content="Pablo Olivera" />
+    <meta name="OG:TTTLE" content={title} />
+    <meta name="OG:IMAGE" content="/og_port_img.png" />
+    <meta
+      name="OG:DESCRIPTION"
+      content="Hola! Soy Pablo Olivera, Desarrollador Web Full Stack con experiencia
+    en la gestión y desarrollo de D. UNA Delivery App, me he especializado
+    en JavaScript, utilizando sus librerías y frameworks para crear
+    herramientas y soluciones efectivas."
+    />
+    <meta
+      name="keyword"
+      content="Programador Full Stack, Desarrollador Web, Diseño Web, Colombia Full Stack"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -69,7 +83,6 @@ const { title, description } = Astro.props;
     margin: 0px;
     padding: 0px;
     color: #f5f5f5;
-    cursor: default;
     user-select: none;
   }
 </style>

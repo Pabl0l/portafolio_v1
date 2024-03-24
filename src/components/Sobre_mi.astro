@@ -15,35 +15,40 @@ const frontend = [
   "ts",
   "react",
   "redux",
+  "photoshop",
   "astro",
   "tailwind",
   "figma",
-  "photoshop",
 ];
 ---
 
-<section class="sec-sm">
+<section class="sec-sm" id="sobremi">
   <article class="sm-detalles">
     <div class="right-pad">
       <h2 class="text-titulo">S o b r e &nbsp; m í</h2>
       <div class="div-sm sm-a">
         <p class="p-st">
-          Hola! Soy Pablo Olivera, Desarrollador Web Full Stack con experiencia
-          en la gestión y desarrollo de D. UNA Delivery App, me he especializado
-          en JavaScript, utilizando sus librerías y frameworks para crear
-          herramientas y soluciones efectivas.
+          Hola! <span class="span-bold"
+            >Soy Pablo Olivera, Desarrollador Web Full Stack</span
+          >
+          con experiencia en la gestión y desarrollo de D. UNA Delivery App, me he
+          especializado en <span class="span-bold">JavaScript</span>, utilizando
+          sus librerías y frameworks para crear herramientas y soluciones
+          efectivas.
           <br />
-          Durante mi tiempo en D. UNA, perfeccioné habilidades de programación y
-          fortalecí habilidades blandas al colaborar con asociados y clientes. <br
-          />
+          Durante mi tiempo en D. UNA, perfeccioné <span class="span-bold"
+            >habilidades de programación
+          </span> y fortalecí <span class="span-bold"
+            >habilidades blandas
+          </span> al colaborar con asociados y clientes. <br />
           Ahora como freelancer, continúo mejorando mis habilidades técnicas y blandas
-          para proporcionar soluciones sólidas, comprometido con la excelencia y
-          claridad en cada proyecto.
+          para proporcionar <span class="span-bold">soluciones sólidas</span>,
+          comprometido con la excelencia y claridad en cada proyecto.
         </p>
       </div>
     </div>
     <div class="left-pad">
-      <a class="a-contratame" href="">Contrátame</a>
+      <a class="a-contratame" href="#welcome" id="contratame">¡ Contrátame !</a>
       <div class="div-sm sm-b">
         <p class="p-st">
           De: Arauca, Colombia. <br /> En: Barranquilla, Colombia. <br /> Modelo:
@@ -51,14 +56,14 @@ const frontend = [
         </p>
       </div>
       <div class="div-sm sm-c">
-        <p class="p-st">
-          También disfruto:
-          <br />-Tocar guitarra
-          <br />-Salir con mis perros
-          <br />-Hacer ejercicio
-          <br />-La filmografía
-          <br />-Conversaciones de calidad
-        </p>
+        <p class="p-st">También disfruto:</p>
+        <ul class="ul-sm">
+          <li>Tocar guitarra</li>
+          <li>Salir con mis perros</li>
+          <li>Hacer ejercicio</li>
+          <li>La filmografía</li>
+          <li>Conversaciones de calidad</li>
+        </ul>
       </div>
     </div>
   </article>
@@ -68,13 +73,13 @@ const frontend = [
       <div class="mini-div-sm">
         <label class="lab-sm">Ingles</label>
         <progress class="prgss-sm" max="100" value="75"></progress>
-        <label class="lab-sm">Concentración</label>
+        <label class="lab-sm"> Concentración</label>
         <progress class="prgss-sm" max="100" value="95"></progress>
-        <label class="lab-sm">Adaptabilidad</label>
+        <label class="lab-sm"> Adaptabilidad</label>
         <progress class="prgss-sm" max="100" value="90"></progress>
-        <label class="lab-sm">Trabajo en equipo</label>
+        <label class="lab-sm"> Trabajo en equipo</label>
         <progress class="prgss-sm" max="100" value="70"></progress>
-        <label class="lab-sm">Comunicación</label>
+        <label class="lab-sm"> Comunicación</label>
         <progress class="prgss-sm" max="100" value="80"></progress>
       </div>
     </div>
@@ -84,7 +89,7 @@ const frontend = [
         <div class="mini-div-sm icon-content">
           {
             frontend.map((tec) => (
-              <img class="icon" src={`/public/${tec}.svg`} alt={tec} />
+              <img class="icon" src={`${tec}.svg`} alt={tec} />
             ))
           }
         </div>
@@ -103,13 +108,13 @@ const frontend = [
       </div>
       <div class="g-otros">
         <h4 class="hab-title">Otros</h4>
-        <div class="mini-div-sm icon-content">
+        <ul class="mini-div-sm icon-content">
           {
             otros.map((tec) => (
-              <img class="icon" src={`/public/${tec}.svg`} alt={tec} />
+              <img class="icon" src={`${tec}.svg`} alt={tec} />
             ))
           }
-        </div>
+        </ul>
       </div>
     </div>
     <p class="original">
@@ -126,6 +131,9 @@ const frontend = [
   .sec-sm {
     min-height: 44.4dvw;
     position: relative;
+  }
+  .span-bold {
+    font-weight: 400;
   }
   .sm-detalles {
     display: flex;
@@ -175,6 +183,8 @@ const frontend = [
   .p-st {
     font-size: 1.5dvw;
     color: #040404;
+    margin-bottom: 0px;
+    text-align: left;
   }
   .sm-a {
     height: 28dvw;
@@ -192,11 +202,10 @@ const frontend = [
   }
   .sm-c {
     width: 18dvw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .a-contratame {
+    border: 2px solid #223;
+    box-shadow: 4px 4px #223;
     text-decoration: none;
     background-color: #f5f5f5;
     font-size: 1.7dvw;
@@ -206,6 +215,8 @@ const frontend = [
     margin: 10px 18dvw 0px 6dvw;
     font-weight: 500;
     margin: auto;
+    animation: move 0.9s infinite alternate;
+    animation-delay: 0s;
   }
   .hab-title {
     text-decoration: none;
@@ -226,8 +237,9 @@ const frontend = [
   }
   .sm-habilidades {
     display: flex;
-    margin: 80px 0px 40px;
+    padding: 80px 0px 40px;
     justify-content: center;
+    background: linear-gradient(#21243d 75%, #eb8526);
   }
   .sm-habilidades > * {
     flex: 0.3;
@@ -265,7 +277,21 @@ const frontend = [
   }
   .original {
     position: absolute;
-    bottom: -3%;
+    bottom: 0%;
     right: 6%;
+  }
+  .ul-sm {
+    color: #040404;
+    margin-top: 0;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate(0px);
+    }
+
+    100% {
+      transform: translate(0px, 10px);
+    }
   }
 </style>

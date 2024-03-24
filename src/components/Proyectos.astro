@@ -2,7 +2,7 @@
 import Proyects from "./Proyects.astro";
 ---
 
-<section class="sec-proyects">
+<section class="sec-proyects" id="proyectos">
   <div class="up-bar">
     <h2 class="text-titulo tx-blue">P r o y e c t o s</h2>
   </div>
@@ -11,6 +11,7 @@ import Proyects from "./Proyects.astro";
     <div class="toggleScroll left-pad"></div>
     <nav class="g-proyects" id="g-proyects">
       <Proyects
+        clase="proyect1"
         titulo="Andromeda App"
         color="#230443"
         imagen="/andromeda_page.png"
@@ -20,6 +21,7 @@ import Proyects from "./Proyects.astro";
         url=""
       />
       <Proyects
+        clase="proyect2"
         titulo="D. Una Delivery App"
         color="#FFAF4E"
         imagen="/D_Una_Page.png"
@@ -38,6 +40,7 @@ import Proyects from "./Proyects.astro";
         url=""
       />
       <Proyects
+        clase="proyect3"
         titulo="CS3 by Pabl0l"
         color="#22B455"
         imagen="/cs3_by_pabl0l.png"
@@ -146,5 +149,8 @@ import Proyects from "./Proyects.astro";
   }
   .right-pad {
     right: -0.5%;
+  }
+  .bkas {
+    display: none;
   }
 </style>

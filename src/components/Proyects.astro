@@ -1,5 +1,6 @@
 ---
 interface Props {
+  clase: string;
   titulo: string;
   color: string;
   logo: string;
@@ -8,17 +9,22 @@ interface Props {
   tecnologias: string[];
   url: string;
 }
-const { titulo, descripcion, imagen, tecnologias, logo, color, url } =
+const { titulo, descripcion, imagen, tecnologias, logo, color, url, clase } =
   Astro.props;
 ---
 
 <article
-  class="art-proy"
+  class={"art-proy " + clase}
   style={`box-shadow: 4px 4px ${color}; border: 1px solid ${color};`}
 >
   <div class="left-p-side">
     <div class="div-logo">
-      <img class="img-logo" src={logo} alt="imagen del proyecto" />
+      <img
+        loading="lazy"
+        class="img-logo"
+        src={logo}
+        alt="imagen del proyecto"
+      />
     </div>
     <div
       class="div-icons"
@@ -26,7 +32,7 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url } =
     >
       {
         tecnologias.map((tec, index) => (
-          <img class="icon" src={`/public/${tec}.svg`} alt={tec} />
+          <img loading="lazy" class="icon" src={`/${tec}.svg`} alt={tec} />
         ))
       }
     </div>
@@ -40,12 +46,17 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url } =
     </h3>
     <p class="p-desc">{descripcion}</p>
 
-    <a href={`https://${url}`} target="_blank">
+    <a href={`https://${url}`} target="_blank" rel="noreferrer">
       <div
         class="div-img"
         style={`box-shadow: 4px 4px ${color}; border: 1px solid ${color};`}
       >
-        <img class="img-imagen" src={imagen} alt="imagen del proyecto" />
+        <img
+          loading="lazy"
+          class="img-imagen"
+          src={imagen}
+          alt="imagen del proyecto"
+        />
       </div>
     </a>
   </div>
@@ -81,6 +92,9 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url } =
     width: 41.8dvw;
     overflow: hidden;
     border-radius: 10px;
+  }
+  .div-img:hover {
+    animation: shake 1s infinite alternate;
   }
   .icon {
     width: 3dvw;
@@ -130,5 +144,14 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url } =
     font-size: 3dvw;
     margin-bottom: 8px;
     text-align: center;
+  }
+  @keyframes shake {
+    0% {
+      transform: translate(0px);
+    }
+
+    100% {
+      transform: translate(0px, 10px);
+    }
   }
 </style>

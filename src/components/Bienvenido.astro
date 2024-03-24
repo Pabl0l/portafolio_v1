@@ -1,19 +1,20 @@
 <main class="wel-main">
-  <div class="wel-izq">
+  <div class="wel-izq" id="welcome">
     <h2 class="text-titulo">H o l a !</h2>
     <h1 class="wel-h1">
       Soy <span class="span-Pablo">Pablo</span>
       <br /> &#123;Web Developer&#125;
     </h1>
     <div class="g-contacto">
-      <a class="h3-resumen" href="">Resumen</a>
+      <a class="h3-resumen" href="/CV.pdf" download>Resumen CV</a>
 
       <nav class="g-contact">
         <a
-          class="icon"
+          class="icon iconhover"
           href="https://github.com/Pabl0l"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
+          aria-label="Perfil de Github de Pabl0l"
         >
           <svg
             role="img"
@@ -26,7 +27,7 @@
           >
         </a>
         <a
-          class="icon"
+          class="icon iconhover"
           href="https://www.linkedin.com/in/pablo-olivera-451467292/"
           target="_blank"
           rel="noopener noreferrer"
@@ -48,16 +49,20 @@
   <div class="g-photo">
     <img class="wel-img" src="/Vector.png" alt="Pabl0l Imagen" />
     <nav class="wel-nav">
-      <a class="wel-a" href="#">Proyectos</a>
-      <a class="wel-a" href="#">Sobre mí</a>
+      <a class="wel-a" href="#proyectos">Proyectos</a>
+      <a class="wel-a" href="#sobremi">Sobre mí</a>
     </nav>
   </div>
 </main>
-
+<script>
+  document.getElementById("contratame")?.addEventListener("click", () => {
+    document.querySelectorAll(".icon").forEach((elemento) => {
+      elemento.classList.remove("iconhover");
+    });
+    document?.querySelector(".g-contact")?.classList.add("contact-open");
+  });
+</script>
 <style>
-  .upright-blue {
-    position: absolute;
-  }
   .wel-main {
     height: 44.4dvw;
     display: flex;
@@ -87,23 +92,60 @@
   }
   .icon {
     width: 4dvw;
-    margin: -6px 10px;
+    margin: -6px 24px;
     text-decoration: none;
+    transition: all 0.5s;
   }
+  .iconhover:hover {
+    width: 5.5dvw;
+  }
+
   .g-contacto,
   .g-contact {
     display: flex;
+    box-sizing: border-box;
+  }
+  .g-contacto {
+    margin-left: 6dvw;
+    display: flex;
+    justify-content: space-around;
+  }
+  .g-contact {
+    box-shadow: 0px 0px #223;
+    border: 0px solid #223;
+    border-radius: 8px;
+    padding: 10px 0px;
+    margin: -10px 0px 0px;
+    height: fit-content;
+    transition:
+      border 1.5s,
+      box-shadow 2.5s;
+  }
+  .contact-open {
+    box-shadow: 8px 8px #223;
+    border: 2px solid #21243d;
   }
   .h3-resumen {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #f5f5f5;
     font-size: 1.7dvw;
     padding: 0.5dvw 4dvw;
     border-radius: 5px;
     color: #eb8526;
-    margin: 0px 18dvw 0px 6dvw;
     font-weight: 500;
     box-shadow: 4px 4px #21243d;
+    height: 2.5dvw;
+    width: 11dvw;
+    transition: all 0.5s;
+  }
+  .h3-resumen:hover {
+    height: 3.5dvw;
+    font-size: 2.2dvw;
+    width: 13dvw;
+    box-shadow: 8px 8px #21243d;
   }
   .g-photo {
     flex: 0.4;
@@ -113,8 +155,11 @@
   .wel-a {
     font-size: 1.7dvw;
     color: #f5f5f5;
-
     font-weight: 500;
+    transition: all 0.5s;
+  }
+  .wel-a:hover {
+    font-size: 2.4dvw;
   }
   .wel-nav {
     display: flex;
