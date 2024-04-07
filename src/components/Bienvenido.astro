@@ -3,7 +3,8 @@
     <h2 class="text-titulo">H o l a !</h2>
     <h1 class="wel-h1">
       Soy <span class="span-Pablo">Pablo</span>
-      <br /> &#123;Web Developer&#125;
+      <br />
+      <span class="texto-dinamico" id="texto-dinamico">Olivera</span>
     </h1>
     <div class="g-contacto">
       <a class="h3-resumen" href="/CV.pdf" download>Resumen CV</a>
@@ -61,6 +62,29 @@
     });
     document?.querySelector(".g-contact")?.classList.add("contact-open");
   });
+
+  const stats = [
+    "{Desarrollador Web}",
+    "Diseñador UI//UX",
+    "-Digitalizador-",
+    "Olivera.",
+  ];
+  const cambiarTextoDinamico = () => {
+    const textoDinamico = document.getElementById("texto-dinamico");
+
+    if (textoDinamico instanceof HTMLElement) {
+      let index = 0;
+
+      setInterval(() => {
+        textoDinamico.textContent = stats[index];
+        index = (index + 1) % stats.length;
+      }, 3000);
+    } else {
+      console.error("El elemento 'texto-dinamico' no fue encontrado.");
+    }
+  };
+
+  window.onload = cambiarTextoDinamico;
 </script>
 <style>
   .wel-main {
@@ -83,12 +107,14 @@
     font-size: 2.3dvw;
   }
   .wel-izq {
-    flex: 0.6;
+    flex: 5;
+    display: grid;
   }
   .wel-h1 {
     font-size: 6.3dvw;
-    margin: 6dvw;
+    margin-top: 2dvw;
     text-shadow: 4px 4px #21243d;
+    margin-left: 6dvw;
   }
   .icon {
     width: 4dvw;
@@ -97,7 +123,7 @@
     transition: all 0.5s;
   }
   .iconhover:hover {
-    width: 5.5dvw;
+    transform: scale(1.5);
   }
 
   .g-contacto,
@@ -142,13 +168,11 @@
     transition: all 0.5s;
   }
   .h3-resumen:hover {
-    height: 3.5dvw;
-    font-size: 2.2dvw;
-    width: 13dvw;
+    transform: scale(1.3);
     box-shadow: 8px 8px #21243d;
   }
   .g-photo {
-    flex: 0.4;
+    flex: 3;
     display: flex;
     flex-direction: column;
   }
@@ -159,7 +183,7 @@
     transition: all 0.5s;
   }
   .wel-a:hover {
-    font-size: 2.4dvw;
+    transform: scale(1.3);
   }
   .wel-nav {
     display: flex;
@@ -168,5 +192,8 @@
   .wel-img {
     width: 29dvw;
     margin: 3.8dvw auto;
+  }
+  .texto-dinamico {
+    font-size: 4.5rem;
   }
 </style>
