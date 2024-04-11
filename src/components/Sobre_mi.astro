@@ -7,7 +7,7 @@ const backend = [
   "postgres",
   "dbeaver",
 ];
-const otros = ["git", "chatgpt", "bash"];
+const otros = ["git", "python", "bash"];
 const frontend = [
   "html",
   "css",
@@ -29,13 +29,15 @@ const frontend = [
       <h2 class="text-titulo">S o b r e &nbsp; m í</h2>
       <div class="div-sm sm-a">
         <p class="p-st">
-          Hola! <span class="span-bold"
-            >Soy Pablo Olivera, Desarrollador Web Full Stack</span
+          Hola! <span class="span-bold">Soy Pablo Olivera </span> ,<span
+            class="span-bold"
           >
-          con experiencia en la gestión y desarrollo de D. UNA Delivery App, me he
-          especializado en <span class="span-bold">JavaScript</span>, utilizando
-          sus librerías y frameworks para crear herramientas y soluciones
-          efectivas.
+            Desarrollador Web Full Stack</span
+          >
+          con experiencia en la gestión y desarrollo de D. UNA Delivery App.
+          <br /> Me he especializado en <span class="span-bold">JavaScript</span
+          >, utilizando sus librerías y frameworks para crear herramientas y
+          soluciones efectivas.
           <br />
           Durante mi tiempo en D. UNA, perfeccioné mis <span class="span-bold"
             >habilidades de programación
@@ -52,8 +54,7 @@ const frontend = [
       <a class="a-contratame" href="#welcome" id="contratame">¡ Contrátame !</a>
       <div class="div-sm sm-b">
         <p class="p-st">
-          De: Arauca, Colombia. <br /> En: Barranquilla, Colombia. <br /> Modelo:
-          2002, Oct.
+          De: Arauca, Colombia. <br /> En: Barranquilla. <br /> Modelo: 2002, Oct.
         </p>
       </div>
       <div class="div-sm sm-c">
@@ -122,7 +123,7 @@ const frontend = [
       Diseño original de <a
         href="https://www.github.com/pabl0l"
         target="_blank"
-        style="color:inherit;"><strong>Pabl0l</strong></a
+        style="color:inherit; font-weight:bold;">Pabl0l</a
       > *
     </p>
   </article>
@@ -134,7 +135,8 @@ const frontend = [
     position: relative;
   }
   .span-bold {
-    font-weight: 400;
+    color: #e82;
+    font-weight: bold;
   }
   .sm-detalles {
     display: flex;
@@ -182,9 +184,9 @@ const frontend = [
     flex: 0.3;
   }
   .p-st {
-    font-size: 1.5dvw;
+    font-size: 1.4dvw;
     color: #040404;
-    margin-bottom: 0px;
+    margin: 0;
     text-align: left;
   }
   .sm-a {
@@ -216,7 +218,8 @@ const frontend = [
     margin: 10px 18dvw 0px 6dvw;
     font-weight: 500;
     margin: auto;
-    animation: move 0.9s infinite alternate;
+    animation-timing-function: ease;
+    animation: move 2s ease-in-out infinite alternate;
     animation-delay: 0s;
   }
   .hab-title {
@@ -288,11 +291,11 @@ const frontend = [
 
   @keyframes move {
     0% {
-      transform: translate(0px);
+      transform: translate(0px, 0px);
     }
 
     100% {
-      transform: translate(0px, 10px);
+      transform: translate(0px, 50px);
     }
   }
 </style>
