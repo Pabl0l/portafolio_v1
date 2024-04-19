@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="author" content="Pablo Olivera" />
     <meta name="OG:TTTLE" content={title} />
-    <meta name="OG:IMAGE" content="https://pabl0l.netlify.app/Vector.png" />
+    <meta name="OG:IMAGE" content="/og_port_img.png" />
     <meta
       name="OG:DESCRIPTION"
       content="Hola! Soy Pablo Olivera, Desarrollador Web Full Stack con experiencia
@@ -44,6 +44,7 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <slot />
+    <div class="org-blck"></div>
   </body>
 </html>
 
@@ -61,7 +62,9 @@ const { title, description } = Astro.props;
   */
   .org-blck {
     background-color: #eb8526;
-
+    transform: rotate(24deg);
+    width: 398dvw;
+    height: 170dvh;
     display: flex;
     position: absolute;
     top: 1%;
@@ -82,23 +85,9 @@ const { title, description } = Astro.props;
     color: #f5f5f5;
     user-select: none;
   }
-  body::after {
-    content: "";
-    position: absolute;
-    top: 27%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(24deg);
-    width: 398dvw;
-    height: 170dvh;
-    background-color: #eb8526; /* Color de fondo del elemento */
-    z-index: -1; /* Envía el elemento detrás del contenido del body */
-  }
   @media (max-width: 811px) {
     .org-blck {
-      top: 14%;
-    }
-    .body::after {
-      content: none;
+      display: none;
     }
   }
 </style>
