@@ -60,6 +60,9 @@ const { title, description } = Astro.props;
   Chakra Petch
   Kanit
   */
+  :root {
+    scroll-behavior: smooth;
+  }
   .org-blck {
     background-color: #eb8526;
     transform: rotate(24deg);
@@ -86,6 +89,10 @@ const { title, description } = Astro.props;
     user-select: none;
   }
   @media (max-width: 811px) {
+    :root {
+      scrollbar-width: none;
+      scroll-behavior: auto;
+    }
     .org-blck {
       display: none;
     }

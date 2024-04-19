@@ -290,6 +290,14 @@ const frontend = [
     margin-top: 0;
   }
 
+  @keyframes zoom {
+    0% {
+      transform: scale(0.9); /* Escala intermedia (más pequeña) */
+    }
+    100% {
+      transform: scale(1.1); /* Escala final (vuelve a normal) */
+    }
+  }
   @keyframes move {
     0% {
       transform: translate(0px, 0px);
@@ -317,7 +325,7 @@ const frontend = [
     }
     .a-contratame {
       font-size: 1.6rem;
-      animation: none;
+      animation: zoom 2s infinite alternate;
       margin: 32px;
       color: #eb8526;
     }
