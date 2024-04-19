@@ -95,8 +95,10 @@
 </script>
 <style>
   .wel-main {
-    height: 44.4dvw;
-    display: flex;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
   }
   .span-Pablo {
     font-family: "Chakra Petch", sans-serif;
@@ -115,7 +117,9 @@
   }
   .wel-izq {
     flex: 5;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   .wel-h1 {
     position: relative;
@@ -186,6 +190,7 @@
     flex: 3;
     display: flex;
     flex-direction: column;
+    height: fit-content;
   }
   .wel-a {
     font-size: 1.7dvw;
@@ -250,6 +255,64 @@
     }
     100% {
       transform: scale(1.05); /* Escala final (vuelve a normal) */
+    }
+  }
+
+  @media (max-width: 811px) {
+    .wel-main {
+      height: fit-content;
+      grid-template-columns: 1fr;
+    }
+    .text-titulo {
+      font-size: 1.5rem;
+      width: 50%;
+    }
+    .wel-main > div {
+      height: fit-content;
+      width: 100dvw;
+    }
+    .wel-img {
+      width: 70% !important;
+    }
+    .wel-a {
+      font-size: 1.8rem;
+    }
+    .wel-h1 {
+      font-size: 4rem;
+      margin: 0px auto;
+      width: 100%;
+      text-align: center;
+    }
+    .texto-dinamico {
+      margin: auto;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+    .g-contacto {
+      margin: 0;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 30%;
+    }
+    .g-contact,
+    .h3-resumen {
+      margin: 10px;
+    }
+    .h3-resumen {
+      height: fit-content;
+      width: fit-content;
+      font-size: 1.5rem;
+      box-shadow: 4px 4px 0px #eb8526;
+    }
+    .icon {
+      width: 3rem;
+    }
+    .contact-open {
+      box-shadow: 8px 8px #eb8526;
+      border: 2px solid #eb8526;
     }
   }
 </style>

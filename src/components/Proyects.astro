@@ -46,7 +46,12 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url, clase } =
     </h3>
     <p class="p-desc">{descripcion}</p>
 
-    <a href={`https://${url}`} target="_blank" rel="noreferrer">
+    <a
+      class="a-div-img"
+      href={`https://${url}`}
+      target="_blank"
+      rel="noreferrer"
+    >
       <div
         class="div-img"
         style={`box-shadow: 4px 4px ${color}; border: 1px solid ${color};`}
@@ -68,9 +73,10 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url, clase } =
     background-color: #f5f5f5;
     border-radius: 16px;
     width: 75dvw;
-    height: 80dvh;
+    height: fit-content;
     display: flex;
     overflow: hidden;
+    padding-bottom: 20px;
   }
   .right-p-side {
     flex: 0.6;
@@ -88,10 +94,10 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url, clase } =
   }
   .div-img {
     background-color: #040404;
-    height: 41dvh;
     width: 41.8dvw;
     overflow: hidden;
     border-radius: 10px;
+    height: fit-content;
   }
   .div-img:hover {
     animation: shake 1s infinite alternate;
@@ -119,6 +125,11 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url, clase } =
     margin-bottom: 2px;
     font-size: 1.5dvw;
     color: #040404;
+    height: fit-content;
+  }
+  .a-div-img {
+    width: 80%;
+    display: inline-block;
   }
   .div-icons {
     background-color: #fff;
@@ -152,6 +163,47 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url, clase } =
 
     100% {
       transform: translate(0px, 10px);
+    }
+  }
+  @media (max-width: 811px) {
+    .art-proy {
+      margin: 16px auto;
+    }
+    .text-titulo {
+      font-size: 1.5rem;
+      width: 50%;
+    }
+    .div-logo {
+      width: fit-content;
+      height: fit-content;
+      margin: 8px !important;
+    }
+    .img-logo {
+      width: 100%;
+      height: fit-content;
+    }
+    .h3-titulo {
+      width: fit-content;
+      height: fit-content;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .p-desc {
+      font-size: 0.8rem;
+    }
+    .div-icons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 10px;
+      height: fit-content;
+    }
+    .icon {
+      width: 7dvw;
+    }
+    .div-img {
+      width: 100%;
+      height: fit-content;
     }
   }
 </style>

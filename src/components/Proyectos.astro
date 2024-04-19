@@ -52,59 +52,9 @@ import Proyects from "./Proyects.astro";
   </div>
 </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.querySelector(".scroll-div");
-    let intervalo = 0;
-
-    if (nav !== null) {
-      const scrollIzquierdo = document.querySelector(".left-pad");
-      const scrollDerecho = document.querySelector(".right-pad");
-
-      scrollIzquierdo?.addEventListener("mouseover", () => {
-        intervalo = setInterval(function () {
-          console.log(nav.scrollLeft);
-          if (nav.scrollLeft > 980) {
-            nav.scrollLeft -= 20;
-            (nav.scrollLeft === 980 && clearInterval(intervalo)) ||
-              scrollIzquierdo?.addEventListener("mouseout", () =>
-                clearInterval(intervalo)
-              );
-          } else {
-            nav.scrollLeft -= 20;
-            (nav.scrollLeft === 0 && clearInterval(intervalo)) ||
-              scrollIzquierdo?.addEventListener("mouseout", () =>
-                clearInterval(intervalo)
-              );
-          }
-        }, 1);
-      });
-
-      scrollDerecho?.addEventListener("mouseover", () => {
-        intervalo = setInterval(function () {
-          console.log(nav.scrollLeft);
-          if (nav.scrollLeft < 980) {
-            nav.scrollLeft += 20;
-            (nav.scrollLeft === 980 && clearInterval(intervalo)) ||
-              scrollDerecho?.addEventListener("mouseout", () =>
-                clearInterval(intervalo)
-              );
-          } else {
-            nav.scrollLeft += 20;
-            (nav.scrollLeft === 1980 && clearInterval(intervalo)) ||
-              scrollDerecho?.addEventListener("mouseout", () =>
-                clearInterval(intervalo)
-              );
-          }
-        }, 1);
-      });
-    }
-  });
-</script>
-
 <style>
   .sec-proyects {
-    height: 44.4dvw;
+    height: fit-content;
     position: relative;
   }
   .up-bar {
@@ -127,10 +77,11 @@ import Proyects from "./Proyects.astro";
   }
   .g-proyects {
     display: flex;
-    width: 240dvw;
+    flex-direction: column;
+    width: fit-content;
     overflow-x: auto;
     height: fit-content;
-    margin: 0px 6dvw;
+    margin: auto;
   }
   .scroll-div {
     overflow-x: hidden;
@@ -151,5 +102,15 @@ import Proyects from "./Proyects.astro";
   }
   .bkas {
     display: none;
+  }
+  @media (max-width: 811px) {
+    .text-titulo {
+      font-size: 1.3rem;
+      width: 50%;
+    }
+    .g-proyects {
+      margin: 0;
+      width: 100%;
+    }
   }
 </style>
