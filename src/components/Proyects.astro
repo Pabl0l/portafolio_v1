@@ -31,7 +31,7 @@ const { titulo, descripcion, imagen, tecnologias, logo, color, url, clase } =
       style={`box-shadow: 4px 4px ${color}; border: 1px solid ${color};`}
     >
       {
-        tecnologias.map((tec, index) => (
+        tecnologias.map((tec) => (
           <img loading="lazy" class="icon" src={`/${tec}.svg`} alt={tec} />
         ))
       }
